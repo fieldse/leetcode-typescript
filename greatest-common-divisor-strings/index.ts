@@ -1,31 +1,48 @@
 export function gcdOfStrings(str1: string, str2: string): string {
-  let subStr: string = '';
+  // Get longer and shorter strings
   const [shorterStr, longerStr] =
     str1.length < str2.length ? [str1, str2] : [str2, str1];
-  let start = 0;
-  let end = shorterStr.length;
-  let offset = 0;
+  const lenLonger = longerStr.length;
+  const lenShorter = shorterStr.length;
 
-  // For each substring of shorter, check if it's in longer.
-  //  If not, increment offset. Start and end of slice are incremented accordingly.
-  // check if new slice is in longer.
-  //   no ? increment offset again.
-  //  if new end value = end of shorter, then decrement maxlen and break to next loop.
-  while (end > 0) {
-    // Get substring
-    subStr = shorterStr.slice(start + offset, end + offset);
-    if (longerStr.includes(subStr)) {
-      return subStr; // found the match? return it
+  // Start with the full shorter string
+  let subStringLen = lenShorter;
+  while (subStringLen > 0) {
+    // If it's a divisor of both strings...
+    if (lenShorter % subStringLen === 0 && lenLonger % subStringLen === 0) {
+      // ... and each word is composed only of repetitions of this substring
+      let subStr = shorterStr.slice(0, subStringLen);
+      if (
+        isComposedOfSubstring(shorterStr, subStr) &&
+        isComposedOfSubstring(longerStr, subStr)
+      ) {
+        // ... then it's our solution
+        return subStr;
+      }
     }
-
-    // If our window is at last character, next loop
-    if (end + offset === shorterStr.length) {
-      offset = 0; // reset offsent
-      end -= 1; // shorten window length
-      continue;
-    }
-    // no match? increment offset
-    offset += 1;
+    subStringLen -= 1; // else, shorten the substring divisor length
   }
   return '';
+}
+
+export function isComposedOfSubstring(word: string, subStr: string): boolean {
+  var maxLen = word.length;
+  var subLen = subStr.length;
+  if (!subLen || !maxLen) {
+    return false;
+  }
+  if (maxLen % subLen !== 0) {
+    return false;
+  }
+  let i = 0;
+  let end = i + subLen;
+  while (end <= maxLen) {
+    let chunk = word.slice(i, end);
+    if (chunk !== subStr) {
+      return false;
+    }
+    i += subLen;
+    end += subLen;
+  }
+  return true;
 }
