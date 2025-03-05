@@ -1,15 +1,38 @@
-# bun-leetcode
+# Leetcode Typescript problems
 
-To install dependencies:
+## Summary
+
+A select subset of the [Leetcode problems list](https://leetcode.com/problemset/), solved in TypeScript.
+
+The project is built with Bun.sh (rather than Node).
+
+Refreshing my TypeScript skills with Leetcode challenges.
+
+## The Problems
+
+1. [Add two numbers](./addTwoNumbers/add-two-numbers.md)
+
+## Installation
 
 ```bash
 bun install
 ```
 
-To run:
+## Usage
 
-```bash
-bun run index.ts
+Run the solution tests using Bun's built-in test suite.
+
+```
+bun test
+
 ```
 
-This project was created using `bun init` in bun v1.2.4. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+## Links & resources
+
+- Leetcode - https://leetcode.com
+- Full problem list - https://leetcode.com/problems/add-two-numbers/
+- TypeScript documentation - https://www.typescriptlang.org/docs/
+
+## Maintainer
+
+Matt Fields - [hello@mattfields.dev](mailto:hello@mattfields.dev)
