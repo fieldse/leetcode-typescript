@@ -1,3 +1,5 @@
+# Merge strings alternately
+
 ## Summary
 
 Merge two strings, alternating letter by letter.

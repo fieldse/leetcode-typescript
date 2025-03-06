@@ -10,8 +10,8 @@ Refreshing my TypeScript skills with Leetcode challenges.
 
 ## The Problems
 
-1. [Add two numbers](./add-two-numbers/add-two-numbers.md)
-2. [Merge two strings alternately](./merge-strings-alternately/merge-strings-alternately.md)
+1. [Add two numbers](./add-two-numbers/description.md)
+2. [Merge two strings alternately](./merge-strings-alternately/description.md)
 
 ## Installation
 
