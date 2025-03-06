@@ -23,6 +23,6 @@ describe('check kids with highest number of candies', () => {
   testCases.map((t, i) => {
     let result = kidsWithCandies(t.candies, t.extraCandies);
     test(`case ${i + 1} of ${testCases.length}`, () =>
-      expect(result).toBe(t.expected));
+      expect(result).toEqual(t.expected));
   });
 });
