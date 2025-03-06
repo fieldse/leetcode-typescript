@@ -13,6 +13,7 @@ Refreshing my TypeScript skills with Leetcode challenges.
 1. [Add two numbers](./add-two-numbers/description.md)
 2. [Merge two strings alternately](./merge-strings-alternately/description.md)
 3. [Kids With the Greatest Number of Candies](./kids-greatest-number-candies/description.md)
+4. [Greatest commmon divisor between two strings](./greatest-common-divisor-strings/description.md)
 
 ## Installation
 
