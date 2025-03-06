@@ -10,7 +10,7 @@ export function merge(
 ): number[] {
   const s1 = nums1.slice(0, m);
   const s2 = nums2.slice(0, n);
-  [...s1, ...s2].sort().map((x, i) => (nums1[i] = x));
+  [...s1, ...s2].sort((a, b) => a - b).map((x, i) => (nums1[i] = x));
   // We have to do this because of the weird replacement requirement at the actual Leetcode problem.
   // Replacing nums1 = [...] doesn't update the original - rather creates a copy.
   return nums1;
