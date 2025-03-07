@@ -27,6 +27,10 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 .cache
 *.tsbuildinfo
 
+# VSCode
+.vscode
+*.code-workspace
+
 # IntelliJ based IDEs
 .idea
 
