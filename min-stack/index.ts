@@ -1,16 +1,22 @@
 export class MinStack {
   stack: number[];
+  private minStack: number[];
 
   constructor() {
     this.stack = [];
+    this.minStack = [];
   }
 
   push(val: number): void {
     this.stack.push(val);
+    let lastMin = this.getMin();
+    let newMin = lastMin < val ? lastMin : val;
+    this.minStack.push(newMin);
   }
 
   pop(): void {
     this.stack.pop();
+    this.minStack.pop();
   }
 
   top(): number {
@@ -18,7 +24,6 @@ export class MinStack {
   }
 
   getMin(): number {
-    return Math.min(...this.stack);
+    return this.minStack[this.minStack.length - 1];
   }
-  // return this.stack.reduce((x, acc) => (x <= acc ? x : acc), this.stack[0]);
 }
