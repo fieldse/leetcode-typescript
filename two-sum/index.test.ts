@@ -15,7 +15,8 @@ const testCases: TestCase[] = [
 describe('Find indices of two numbers giving sum', () => {
   testCases.map((t) => {
     test(`${t.nums} -> ${t.target}`, () => {
-      expect(twoSum(t.nums, t.target)).toBe(t.expected);
+      const result = twoSum(t.nums, t.target);
+      expect(result).toEqual(t.expected);
     });
   });
 });
