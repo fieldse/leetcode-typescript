@@ -18,6 +18,7 @@ Most of these are taken from the [Top interview 150](https://leetcode.com/studyp
 4. [Greatest commmon divisor between two strings](./greatest-common-divisor-strings/description.md)
 5. [Merge array sorted](./merge-sorted/description.md)
 6. [Remove element](./remove-element/description.md)
+7. [Two sum](./two-sum/description.md)
 
 ## Installation
 
