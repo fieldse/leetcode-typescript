@@ -1,29 +1,32 @@
+type StackVal = {
+  val: number;
+  min: number;
+};
 export class MinStack {
-  stack: number[];
-  private minStack: number[];
+  stack: StackVal[];
 
   constructor() {
     this.stack = [];
-    this.minStack = [];
   }
 
   push(val: number): void {
-    this.stack.push(val);
     let lastMin = this.getMin();
-    let newMin = lastMin < val ? lastMin : val;
-    this.minStack.push(newMin);
+    this.stack.push({ val, min: lastMin < val ? lastMin : val });
   }
 
   pop(): void {
     this.stack.pop();
-    this.minStack.pop();
   }
 
   top(): number {
-    return this.stack[this.stack.length - 1];
+    return this.stack[this.stack.length - 1].val;
   }
 
   getMin(): number {
-    return this.minStack[this.minStack.length - 1];
+    return this.last()?.min as number; // this will never be called on an empty stack, as per constraints
+  }
+
+  last(): StackVal | undefined {
+    return this.stack[this.stack.length - 1];
   }
 }

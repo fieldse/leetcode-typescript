@@ -7,7 +7,8 @@ describe('Minimum stack tests', () => {
     m.push(1);
     m.push(2);
     m.push(3);
-    expect(m.stack).toEqual([1, 2, 3]);
+    expect(m.stack.length).toEqual(3);
+    expect(m.top()).toEqual(3);
   });
 
   test('test top operations', () => {
@@ -26,9 +27,11 @@ describe('Minimum stack tests', () => {
     m.push(1);
     m.push(2);
     m.push(3);
-    expect(m.stack).toEqual([1, 2, 3]);
+    expect(m.top()).toEqual(3);
     m.pop();
-    expect(m.stack).toEqual([1, 2]);
+    expect(m.top()).toEqual(2);
+    m.pop();
+    expect(m.top()).toEqual(1);
   });
 
   test('test min operations', () => {
