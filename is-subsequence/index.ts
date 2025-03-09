@@ -1,11 +1,11 @@
 export function isSubsequence(s: string, t: string): boolean {
-  const sChars = s.split('').reverse();
+  let j = 0;
   for (let i = 0; i < t.length; i++) {
-    let c1 = t[i]; // character from t
-    let c2 = sChars[sChars.length - 1]; // character from s
+    let c1 = t[i]; // character from word t
+    let c2 = s[j]; // character from word s
     if (c1 === c2) {
-      sChars.pop();
+      j++; // advance the position in word s
     }
   }
-  return sChars.length === 0;
+  return j === s.length;
 }

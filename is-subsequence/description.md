@@ -9,7 +9,7 @@ Validate if a given string is a subsequence of a larger string.
 ## Topics
 
 - strings
-- stack
+- two pointers
 
 ## Description
 
@@ -21,3 +21,9 @@ A subsequence of a string is a new string that is formed from the original strin
 ```
 
 ## Notes
+
+This is basically a two pointers problem: fast and slow pointer.
+Approach:
+
+- We iterate across the characters of `t`, matching vs characters of `s`. If the characters match, our `s` counter advances.
+- If we reach the end of `s` by the end of `t`, our word is a substring.
