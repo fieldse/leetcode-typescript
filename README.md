@@ -20,6 +20,8 @@ Most of these are taken from the [Top interview 150](https://leetcode.com/studyp
 6. [Remove element](./remove-element/description.md)
 7. [Two sum](./two-sum/description.md)
 8. [Min stack](./min-stack/description.md)
+9. [Is subsequence](./is-subsequence/description.md)
+10. [Ransom note](./ransom-note/description.md)
 
 ## Installation
 
