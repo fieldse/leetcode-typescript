@@ -12,9 +12,9 @@ const testCases: TestCase[] = [
   { s1: 'aa', s2: 'aab', expected: true },
 ];
 
-describe('EXAMPLE PROBLEM', () => {
+describe('test can construct string from characters of second string', () => {
   testCases.map((t) => {
-    test('test label', () => {
+    test(`${t.s1} -> ${t.s2}`, () => {
       expect(canConstruct(t.s1, t.s2)).toBe(t.expected);
     });
   });
