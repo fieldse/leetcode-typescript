@@ -15,8 +15,9 @@ const testCases: TestCase[] = [
 
 describe('EXAMPLE PROBLEM', () => {
   testCases.map((t) => {
-    test('test label', () => {
-      expect(exampleFunc(t.s1, t.s2)).toBe(t.expected);
+    test(`${t.s1} -> ${t.s2}`, () => {
+      const result = exampleFunc(t.s1, t.s2);
+      expect(result).toBe(t.expected);
     });
   });
 });
