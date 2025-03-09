@@ -3,9 +3,10 @@ export function isAnagram1(s: string, t: string): boolean {
   return s.split('').sort().toString() === t.split('').sort().toString();
 }
 
+// Highly optimized version
 // credit for this solution:
 // https://leetcode.com/problems/valid-anagram/solutions/6149327/typescript-solution-97
-export function isAnagram(s: string, t: string): boolean {
+export function isAnagram2(s: string, t: string): boolean {
   if (s.length !== t.length) {
     return false;
   }
@@ -18,4 +19,28 @@ export function isAnagram(s: string, t: string): boolean {
     charCount[y]--;
   }
   return charCount.every((x) => x === 0);
+}
+
+function toMap(word: string): Record<string, number> {
+  const m: Record<string, number> = {};
+  for (let char of word) {
+    m[char] = (m[char] || 0) + 1;
+  }
+  return m;
+}
+
+// Build frequency map of letter, subtracing out 't' characters.
+// If any non-zero values remain, it's not an anagram.
+export function isAnagram(s: string, t: string): boolean {
+  if (s.length !== t.length) {
+    return false;
+  }
+  let m = toMap(s);
+  for (let char of t) {
+    m[char] = (m[char] || 0) - 1;
+  }
+  if (Object.values(m).find((x) => x !== 0)) {
+    return false;
+  }
+  return true;
 }
