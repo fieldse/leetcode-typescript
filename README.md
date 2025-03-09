@@ -22,6 +22,7 @@ Most of these are taken from the [Top interview 150](https://leetcode.com/studyp
 8. [Min stack](./min-stack/description.md)
 9. [Is subsequence](./is-subsequence/description.md)
 10. [Ransom note](./ransom-note/description.md)
+11. [Valid anagram](./valid-anagram/description.md)
 
 ## Installation
 
